@@ -31,6 +31,5 @@
         <g:else>
             <p>You have no accounts registered, please <g:link controller="account" action="create">create one</g:link>.</p>
         </g:else>
-        <g:link controller="account" action="create"><g:message code="default.new.label" args="['Account']" /></g:link>
     </body>
 </html>
