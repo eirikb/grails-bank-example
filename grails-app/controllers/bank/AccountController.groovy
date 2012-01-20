@@ -4,6 +4,8 @@ import org.springframework.dao.DataIntegrityViolationException
 
 class AccountController {
 
+    def springSecurityService
+
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
     def index() {
@@ -21,13 +23,15 @@ class AccountController {
 
     def save() {
         def accountInstance = new Account(params)
+        def id = springSecurityService.principal?.id?.toInteger()
+        def user = User.get(id)
+        accountInstance.user = user
         if (!accountInstance.save(flush: true)) {
             render(view: "create", model: [accountInstance: accountInstance])
-            return
         }
 
 		flash.message = message(code: 'default.created.message', args: [message(code: 'account.label', default: 'Account'), accountInstance.id])
-        redirect(action: "show", id: accountInstance.id)
+        redirect(controller: 'bank')
     }
 
     def show() {

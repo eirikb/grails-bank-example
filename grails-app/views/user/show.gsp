@@ -87,9 +87,11 @@
                         </tr>
                     
                         <tr class="prop">
+<%--
                             <td valign="top" class="name"><g:message code="user.person.label" default="Person" /></td>
                             
                             <td valign="top" class="value"><g:link controller="person" action="show" id="${userInstance?.person?.id}">${userInstance?.person?.encodeAsHTML()}</g:link></td>
+--%>
                             
                         </tr>
                     

@@ -20,11 +20,17 @@ class UserController {
     }
 
     def save() {
+        params.enabled = true
         def userInstance = new User(params)
         if (!userInstance.save(flush: true)) {
             render(view: "create", model: [userInstance: userInstance])
             return
         }
+
+        def userRole = Role.findByAuthority('ROLE_USER')
+        if (!userInstance.authorities.contains(userRole)) {
+            UserRole.create userInstance, userRole
+        } 
 
 		flash.message = message(code: 'default.created.message', args: [message(code: 'user.label', default: 'User'), userInstance.id])
         redirect(action: "show", id: userInstance.id)

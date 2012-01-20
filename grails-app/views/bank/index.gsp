@@ -13,6 +13,7 @@
             </g:if>
             <div class="box grid_7">
             	<h3>Personal info</h3>
+<%--
 	            <g:if test="${user.person}">
 	            	<g:if test="${user.person.firstname || user.person.lastname} ">
 	            	 	<p>Welcome ${user.person.lastname }, ${user.person.firstname }</p>
@@ -27,6 +28,7 @@
 	            <g:else>
 	            	<p>You have no person info set, please <g:link controller="person" action="edit">create it</g:link>.</p>
 	            </g:else>
+--%>
             </div>
             <div class="clear"></div>
             <div class="box grid_7">

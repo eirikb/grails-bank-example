@@ -1,6 +1,8 @@
 package bank
 
-class User {
+import java.io.Serializable;
+
+class User implements Serializable {
 
 	transient springSecurityService
 
@@ -11,14 +13,14 @@ class User {
 	boolean enabled
 	boolean accountExpired
 	boolean accountLocked
-	boolean passwordExpired
+    boolean passwordExpired
 
-    Person person
+  //  Person person
 
 	static constraints = {
 		username blank: false, unique: true
 		password blank: false
-        person nullable: true
+ //       person nullable: true
 	}
 
 	static mapping = {
