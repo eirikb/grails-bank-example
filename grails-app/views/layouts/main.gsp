@@ -23,6 +23,7 @@
             <div class="row">
                 <div class="span2">
                     <g:render template="/templates/menu" />
+                    <tmpl:/templates/menu />
                 </div>
                 <div class="span10">
                     <g:layoutBody />
