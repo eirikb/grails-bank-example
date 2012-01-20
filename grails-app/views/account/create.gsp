@@ -13,32 +13,8 @@
                 <legend>
                     <g:message code="default.create.label" args="[entityName]" />
                 </legend>
-                <div class="clearfix ${hasErrors(bean: accountInstance, field: 'name', 'error')}">
-                    <label for="name">
-                        <g:message code="account.name.label" default="name" />
-                    </label>
-                    <div class="input">
-                        <g:textField class="xlarge" name="name" value="${accountInstance?.name}" />
-                        <g:hasErrors bean="${accountInstance}" field="name">
-                            <g:eachError bean="${accountInstance}" field="name">
-                                <span class="help-inline"><g:message error="${it}"/></span>
-                            </g:eachError>
-                        </g:hasErrors>
-                    </div>
-                </div>
-                <div class="clearfix ${hasErrors(bean: accountInstance, field: 'balance', 'error')}">
-                    <label for="balance">
-                        <g:message code="account.balance.label" default="balance" />
-                    </label>
-                    <div class="input">
-                        <input type="number" class="xlarge" name="balance" value="${accountInstance?.balance}">
-                        <g:hasErrors bean="${accountInstance}" field="balance">
-                            <g:eachError bean="${accountInstance}" field="balance">
-                                <span class="help-inline"><g:message error="${it}"/></span>
-                            </g:eachError>
-                        </g:hasErrors>
-                    </div>
-                </div>
+                <tmpl:/templates/field bean="${accountInstance}" field="name" type="text" message="Name" />
+                <tmpl:/templates/field bean="${accountInstance}" field="balance" type="number" message="Name" />
             </fieldset>
 
             <fieldset>
