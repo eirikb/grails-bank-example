@@ -22,7 +22,7 @@
             </g:if>
             <div class="row">
                 <div class="span2">
-                    <g:render template="/bank/menuTemplate" />
+                    <g:render template="/templates/menu" />
                 </div>
                 <div class="span10">
                     <g:layoutBody />
