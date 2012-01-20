@@ -7,9 +7,6 @@
         <title><g:message code="default.list.label" args="[entityName]" /></title>
     </head>
     <body>
-        <g:link class="create" action="create">
-            <g:message code="default.new.label" args="[entityName]" />
-        </g:link>
 
         <h1><g:message code="default.list.label" args="[entityName]" /></h1>
 
