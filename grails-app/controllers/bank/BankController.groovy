@@ -6,11 +6,14 @@ class BankController {
 	
 	def springSecurityService
 	def bankService
-	
-	def index = {
+
+    def getUser() {
 		def id = springSecurityService.principal?.id?.toInteger()
 		def user = User.get(id)
-		[user: user]
+    }
+	
+	def index = {
+		[user: getUser()]
 	}
 	
 	def transferFlow = {
@@ -37,6 +40,7 @@ class BankController {
 				if (user) {
 					flow.user = user
 					flow.accounts = user.accounts
+					flow.accounts.remove(flow.account)
 					return success()
 				} else {
 					return error()

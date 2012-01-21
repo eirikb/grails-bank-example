@@ -6,10 +6,7 @@
         <title>Bank</title>
     </head>
     <body>
-		<g:render template="menuTemplate" />
-		<div class="body">
-			<p>An error have happened! :O</p>
-			<g:link controller="bank">Go back</g:link>
-		</div>
- 	</body>
+        <p>An error have happened! :O</p>
+        <g:link controller="bank">Go back</g:link>
+    </body>
 </html>
