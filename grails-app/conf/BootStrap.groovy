@@ -7,8 +7,6 @@ class BootStrap {
     def init = { servletContext ->
         createAuth()
     }
-    def destroy = {
-    }
 
     def void createAuth() {
         def userRole
