@@ -1,10 +1,10 @@
 class UrlMappings {
 
-	static mappings = {
+    static mappings = {
 
-		"/$controller/$action?/$id?" ()
+        "/$controller/$action?/$id?" ()
 
-		"/" (controller: 'bank')
-		"500" (view: '/error')
-	}
+        "/" (controller: 'bank')
+        "500" (view: '/error')
+    }
 }

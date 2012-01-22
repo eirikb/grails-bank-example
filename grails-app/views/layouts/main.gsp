@@ -19,7 +19,7 @@
             <g:if test="${flash.message}">
                 <div class="row">
                     <div class="span12">
-            	        <div class="label success">${flash.message}</div>
+                        <div class="label success">${flash.message}</div>
                     </div>
                 </div>
             </g:if>
@@ -31,6 +31,6 @@
                     <g:layoutBody />
                 </div>
             </div>
-	    </div>
+        </div>
     </body>
 </html>

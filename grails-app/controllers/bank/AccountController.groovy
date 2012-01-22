@@ -21,14 +21,14 @@ class AccountController {
             render(view: 'create', model: [accountInstance: accountInstance])
         }
 
-		flash.message = message(code: 'default.created.message', args: [message(code: 'account.label', default: 'Account'), accountInstance.id])
+        flash.message = message(code: 'default.created.message', args: [message(code: 'account.label', default: 'Account'), accountInstance.id])
         redirect(controller: 'bank')
     }
 
     def show() {
         def accountInstance = Account.get(params.id)
         if (!accountInstance) {
-			flash.message = message(code: 'default.not.found.message', args: [message(code: 'account.label', default: 'Account'), params.id])
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'account.label', default: 'Account'), params.id])
             redirect(action: 'list')
             return
         }
