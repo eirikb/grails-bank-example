@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title><g:layoutTitle default="Grails" /></title>
+        <title><g:layoutTitle default="Bank" /></title>
         <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
     </head>
     <body>

@@ -8,11 +8,11 @@
         <g:form>
             <fieldset>
                 <legend>
-                    <g:message code="account.transfer.label" default="Transfer money" />
+                    <g:message code="account.transfer.label" />
                 </legend>
                 <div class="clearfix">
                     <label>
-                        <g:message code="account.from.label" default="From account" />
+                        <g:message code="account.from.label" />
                     </label>
                     <div class="input">
                         <span class="uneditable-input">${account?.name}</span>
@@ -20,7 +20,7 @@
                 </div>
                 <div class="clearfix">
                     <label>
-                        <g:message code="user.to.label" default="To user" />
+                        <g:message code="user.to.label" />
                     </label>
                     <div class="input">
                         <g:select from="${users}" name="user" optionValue="username" optionKey="id" />

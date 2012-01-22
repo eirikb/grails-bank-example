@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'user.label', default: 'User')}" />
+        <g:set var="entityName" value="${message(code: 'user.label')}" />
         <title><g:message code="default.show.label" args="[entityName]" /></title>
     </head>
     <body>
@@ -17,31 +17,31 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><g:message code="user.id.label" default="Id" /></td>
+                    <td><g:message code="user.id.label" /></td>
                     <td>${fieldValue(bean: userInstance, field: "id")}</td>
                 </tr>
                 <tr>
-                    <td><g:message code="user.username.label" default="Username" /></td>
+                    <td><g:message code="user.username.label" /></td>
                     <td>${fieldValue(bean: userInstance, field: "username")}</td>
                 </tr>
                 <tr>
-                    <td><g:message code="user.accountExpired.label" default="Useraccount Expired" /></td>
+                    <td><g:message code="user.accountExpired.label" /></td>
                     <td>${fieldValue(bean: userInstance, field: "accountExpired")}</td>
                 </tr>
                 <tr>
-                    <td><g:message code="user.accountLocked.label" default="Useraccount Locked" /></td>
+                    <td><g:message code="user.accountLocked.label" /></td>
                     <td>${fieldValue(bean: userInstance, field: "accountLocked")}</td>
                 </tr>
                 <tr>
-                    <td><g:message code="user.enabled.label" default="Enabled" /></td>
+                    <td><g:message code="user.enabled.label" /></td>
                     <td>${fieldValue(bean: userInstance, field: "enabled")}</td>
                 </tr>
                 <tr>
-                    <td><g:message code="user.passwordExpired.label" default="Password Expired" /></td>
+                    <td><g:message code="user.passwordExpired.label" /></td>
                     <td>${fieldValue(bean: userInstance, field: "passwordExpired")}</td>
                 </tr>
                 <tr>
-                    <td><g:message code="user.accounts.label" default="Accounts" /></td>
+                    <td><g:message code="user.accounts.label" /></td>
                     <td>
                         <ul>
                             <g:each in="${userInstance.accounts}" var="a">
@@ -58,9 +58,9 @@
             <fieldset>
                 <div class="actions">
                     <g:link action="edit" id="${userInstance?.id}" class="btn primary">
-                        <g:message code="default.button.edit.label" default="Edit" />
+                        <g:message code="default.button.edit.label" />
                     </g:link>
-                    <g:submitButton name="delete" class="btn danger" value="${message(code: 'default.button.delete.label', default: 'Delete')}" />
+                    <g:submitButton name="delete" class="btn danger" value="${message(code: 'default.button.delete.label')}" />
                 </div>
             </fieldset>
         </g:form>

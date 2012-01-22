@@ -2,18 +2,18 @@
     <head>
         <meta name='layout' content='main' />
         <title>
-            <g:message code="security.login.label" default="Login" />
+            <g:message code="security.login.label" />
         </title>
     </head>
     <body>
         <form action="${postUrl}" method="POST">
             <fieldset>
                 <legend>
-                    <g:message code="security.pleaselogin.label" default="Please login" />
+                    <g:message code="security.pleaselogin.label" />
                 </legend>
                 <div class="clearfix">
                     <label for="username">
-                        <g:message code="user.username.label" default="Username" />
+                        <g:message code="user.username.label" />
                     </label>
                     <div class="input">
                         <input type="text" class="xlarge" name="j_username" autofocus>
@@ -21,7 +21,7 @@
                 </div>
                 <div class="clearfix">
                     <label for="password">
-                        <g:message code="user.password.label" default="Password" />
+                        <g:message code="user.password.label" />
                     </label>
                     <div class="input">
                         <input type="password" class="xlarge" name="j_password">
@@ -31,7 +31,7 @@
                     <div class="input">
                         <input type="checkbox" name="${rememberMeParameter}"
                             <g:if test="${hasCookie}">checked="checked"</g:if>>
-                        <span><g:message code="security.rememberme.label" default="Remember me" /></span>
+                        <span><g:message code="security.rememberme.label" /></span>
                     </div>
                 </div>
             </fieldset>

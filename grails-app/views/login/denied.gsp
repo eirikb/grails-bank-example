@@ -1,13 +1,13 @@
 <html>
     <head>
         <meta name="layout" content="main" />
-        <title><g:message code="auth.denied.label" default="Denied" /></title>
+        <title><g:message code="auth.denied.label" /></title>
     </head>
 
     <body>
         <div class="alert-message error">
             <p>
-                <g:message code="auth.unauthorized.label" default="Sorry, you're not authorized to view this page" />
+                <g:message code="auth.unauthorized.label" />
             </p>
         </div>
     </body>
