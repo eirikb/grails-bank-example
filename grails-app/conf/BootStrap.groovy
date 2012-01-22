@@ -1,35 +1,45 @@
-import p1.*
+import bank.*
 
 class BootStrap {
-	
-	def springSecurityService
-	
-	
-	def init = { servletContext -> createAuth() }
-	def destroy = {
-	}
-	
-	def void createAuth() {
-		def userRole = Role.findByAuthority('ROLE_USER') ?: new Role(authority: 'ROLE_USER').save(failOnError: true)
-		def adminRole = Role.findByAuthority('ROLE_ADMIN') ?: new Role(authority: 'ROLE_ADMIN').save(failOnError: true)
-		
-		def adminUser = User.findByUsername('admin') ?: new User(
-				username: 'admin',
-				password: springSecurityService.encodePassword('admin'),
-				enabled: true).save(failOnError: true)
-		
-		
-		if (!adminUser.authorities.contains(adminRole)) {
-			UserRole.create adminUser, adminRole
-		}
-		if (!adminUser.authorities.contains(userRole)) {
-			UserRole.create adminUser, userRole
-		}
-		new Requestmap(url: '/', configAttribute: 'ROLE_USER').save(failOnError: true)
-		new Requestmap(url: '/account/*', configAttribute: 'ROLE_USER').save(failOnError: true)
-		new Requestmap(url: '/bank', configAttribute: 'ROLE_USER').save(failOnError: true)
-		new Requestmap(url: '/bank/*', configAttribute: 'ROLE_USER').save(failOnError: true)
-		new Requestmap(url: '/person', configAttribute: 'ROLE_USER').save(failOnError: true)
-		new Requestmap(url: '/user/*', configAttribute: 'ROLE_ADMIN').save(failOnError: true)
-	}
+
+    def springSecurityService
+
+    def init = { servletContext ->
+        createAuth()
+    }
+
+    def void createAuth() {
+        def userRole
+        def adminRole
+        def adminUser 
+
+        if (!Role.findByAuthority('ROLE_USER')) {
+            userRole = new Role(authority: 'ROLE_USER').save()
+        }
+        if (!Role.findByAuthority('ROLE_ADMIN')) {
+            adminRole = new Role(authority: 'ROLE_ADMIN').save()
+        }
+
+        if (!User.findByUsername('admin')) {
+            adminUser = new User( username: 'admin', password: 'admin', enabled: true).save()
+        }
+
+        if (!adminUser.authorities.contains(adminRole)) {
+            UserRole.create adminUser, adminRole
+        }
+        if (!adminUser.authorities.contains(userRole)) {
+            UserRole.create adminUser, userRole
+        }
+
+        def addRequestMap = { url, role ->
+            new Requestmap(url: url, configAttribute: 'ROLE_' + role.toUpperCase()).save()
+        }
+
+        addRequestMap('/', 'user')
+        addRequestMap('/account/*', 'user')
+        addRequestMap('/bank', 'user')
+        addRequestMap('/bank/*', 'user')
+        addRequestMap('/person', 'user')
+        addRequestMap('/user/*', 'admin')
+    }
 }
