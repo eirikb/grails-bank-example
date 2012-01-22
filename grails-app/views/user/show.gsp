@@ -40,16 +40,6 @@
                     <td><g:message code="user.passwordExpired.label" /></td>
                     <td>${fieldValue(bean: userInstance, field: "passwordExpired")}</td>
                 </tr>
-                <tr>
-                    <td><g:message code="user.accounts.label" /></td>
-                    <td>
-                        <ul>
-                            <g:each in="${userInstance.accounts}" var="a">
-                                <li><g:link controller="account" action="show" id="${a.id}">${a?.encodeAsHTML()}</g:link></li>
-                            </g:each>
-                        </ul>
-                    </td>
-                </tr>
             </tbody>
         </table>
 
@@ -60,7 +50,9 @@
                     <g:link action="edit" id="${userInstance?.id}" class="btn primary">
                         <g:message code="default.button.edit.label" />
                     </g:link>
-                    <g:submitButton name="delete" class="btn danger" value="${message(code: 'default.button.delete.label')}" />
+                    <button class="btn danger" type="submit">
+                        <g:message code="default.button.delete.label" />
+                    </button>
                 </div>
             </fieldset>
         </g:form>

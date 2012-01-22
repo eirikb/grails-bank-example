@@ -2,17 +2,20 @@
 
     <head>
         <meta name="layout" content="main" />
-        <title>Bank</title>
     </head>
     <body>
-        <h3>Accounts</h3>
+        <h2>
+            <g:message code="account.accounts.label" />
+        </h2>
         <g:if test="${user.accounts}">
             <table class="zebra-striped">
                 <thead>
                     <tr>
-                        <g:sortableColumn property="name" title="Name" />
-                        <g:sortableColumn property="balance" title="Balance" />
-                        <th>Transfer</th>
+                        <g:sortableColumn property="name" titleKey="account.name.label" />
+                        <g:sortableColumn property="balance" titleKey="account.balance.label" />
+                        <th>
+                            <g:message code="bank.transfer.label" />
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -21,7 +24,9 @@
                             <td>${fieldValue(bean: account, field: "name")}</td>
                             <td>${fieldValue(bean: account, field: "balance")}</td>
                             <td>
-                                <g:link controller="bank" action="transfer" event="start" id="${account.id }">Transfer</g:link>
+                                <g:link controller="bank" action="transfer" event="start" id="${account.id }">
+                                    <g:message code="bank.transfer.label" />
+                                </g:link>
                             </td>
                         </tr>
                     </g:each>
@@ -29,7 +34,12 @@
             </table>
         </g:if>
         <g:else>
-            <p>You have no accounts registered, please <g:link controller="account" action="create">create one</g:link>.</p>
+            <p>
+                <g:message code="account.noaccounts.label" /> 
+                <g:link controller="account" action="create">
+                    <g:message code="account.createone.label" /> 
+                </g:link>.
+            </p>
         </g:else>
     </body>
 </html>

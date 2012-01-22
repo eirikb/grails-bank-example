@@ -8,29 +8,21 @@
         <g:form>
             <fieldset>
                 <legend>
-                    <g:message code="account.transfer.label" />
+                    <g:message code="bank.transfer.label" />
                 </legend>
-                <div class="clearfix">
-                    <label>
-                        <g:message code="account.from.label" />
-                    </label>
-                    <div class="input">
-                        <span class="uneditable-input">${account?.name}</span>
-                    </div>
-                </div>
-                <div class="clearfix">
-                    <label>
-                        <g:message code="user.to.label" />
-                    </label>
-                    <div class="input">
-                        <g:select from="${users}" name="user" optionValue="username" optionKey="id" />
-                    </div>
-                </div>
+
+                <tmpl:/tmpls/field bean="${account}" field="from" messageCode="account.from.label">
+                    <span class="uneditable-input">${account?.name}</span>
+                </tmpl:/tmpls/field>
+
+                <tmpl:/tmpls/field bean="${account}" field="to" messageCode="user.to.label">
+                    <g:select from="${users}" name="user" optionValue="username" optionKey="id" />
+                </tmpl:/tmpls/field>
             </fieldset>
 
             <fieldset>
                 <div class="actions">
-                    <g:submitButton name="doSelectUser" class="btn primary" value="Select" />
+                    <g:submitButton name="doSelectUser" class="btn primary" value="${message(code: 'bank.select.label')}" />
                 </div>
             </fieldset>
         </g:form>

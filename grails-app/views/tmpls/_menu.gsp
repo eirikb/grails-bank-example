@@ -1,5 +1,5 @@
-<g:set var="user" value="${message(code: 'user.label', default: 'User')}" />
-<g:set var="account" value="${message(code: 'account.label', default: 'Account')}" />
+<g:set var="user" value="${message(code: 'user.label')}" />
+<g:set var="account" value="${message(code: 'account.label')}" />
 
 <sec:ifLoggedIn>
     <ul class="unstyled">

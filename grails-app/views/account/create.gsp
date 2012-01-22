@@ -13,13 +13,20 @@
                 <legend>
                     <g:message code="default.create.label" args="[entityName]" />
                 </legend>
-                <tmpl:/templates/field bean="${accountInstance}" field="name" type="text" message="Name" />
-                <tmpl:/templates/field bean="${accountInstance}" field="balance" type="number" message="Balance" />
+                <tmpl:/tmpls/field bean="${accountInstance}" field="name" messageCode="account.name.label">
+                    <input name="name" type="text" class="xlarge" value="${accountInstance?.name}">
+                </tmpl:/tmpls/field>
+
+                <tmpl:/tmpls/field bean="${accountInstance}" field="name" messageCode="account.balance.label">
+                    <input name="balance" type="number" class="xlarge" value="${accountInstance?.name}">
+                </tmpl:/tmpls/field>
             </fieldset>
 
             <fieldset>
                 <div class="actions">
-                    <g:submitButton name="create" class="btn primary" value="${message(code: 'default.button.create.label'}" />
+                    <button type="submit" class="btn primary">
+                        <g:message code="default.button.create.label" />
+                    </button>
                 </div>
             </fieldset>
         </g:form>

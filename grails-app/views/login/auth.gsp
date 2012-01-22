@@ -9,7 +9,7 @@
         <form action="${postUrl}" method="POST">
             <fieldset>
                 <legend>
-                    <g:message code="security.pleaselogin.label" />
+                    <g:message code="springSecurity.pleaselogin.label" />
                 </legend>
                 <div class="clearfix">
                     <label for="username">
@@ -31,13 +31,15 @@
                     <div class="input">
                         <input type="checkbox" name="${rememberMeParameter}"
                             <g:if test="${hasCookie}">checked="checked"</g:if>>
-                        <span><g:message code="security.rememberme.label" /></span>
+                        <span><g:message code="springSecurity.rememberme.label" /></span>
                     </div>
                 </div>
             </fieldset>
             <fieldset>
                 <div class="actions">
-                    <input class="btn primary" type="submit" value="Login">
+                    <button class="btn primary" type="submit">
+                        <g:message code="springSecurity.login.label" />
+                    </button>
                 </div>
             </fieldset>
         </form>

@@ -13,11 +13,11 @@
         <table class="zebraStripes">
             <thead>
                 <tr>
-                    <g:sortableColumn property="id" title="${message(code: 'user.id.label', default: 'Id')}" />
-                    <g:sortableColumn property="username" title="${message(code: 'user.username.label', default: 'Username')}" />
-                    <g:sortableColumn property="accountExpired" title="${message(code: 'user.accountExpired.label', default: 'Account Expired')}" />
-                    <g:sortableColumn property="accountLocked" title="${message(code: 'user.accountLocked.label', default: 'Account Locked')}" />
-                    <g:sortableColumn property="enabled" title="${message(code: 'user.enabled.label', default: 'Enabled')}" />
+                    <g:sortableColumn property="id" titleKey="user.id.label" />
+                    <g:sortableColumn property="username" titleKey="user.username.label" />
+                    <g:sortableColumn property="accountExpired" titleKey="user.accountExpired.label" />
+                    <g:sortableColumn property="accountLocked" titleKey="user.accountLocked.label" />
+                    <g:sortableColumn property="enabled" titleKey="user.enabled.label" />
                 </tr>
             </thead>
             <tbody>

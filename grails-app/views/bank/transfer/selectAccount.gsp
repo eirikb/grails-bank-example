@@ -10,43 +10,27 @@
                 <legend>
                     <g:message code="account.transfer.label" />
                 </legend>
-                <div class="clearfix">
-                    <label>
-                        <g:message code="account.from.label" />
-                    </label>
-                    <div class="input">
-                        <span class="uneditable-input">${account?.name}</span>
-                    </div>
-                </div>
-                <div class="clearfix">
-                    <label>
-                        <g:message code="user.to.label" />
-                    </label>
-                    <div class="input">
-                        <span class="uneditable-input">${user?.username}</span>
-                    </div>
-                </div>
-                <div class="clearfix">
-                    <label>
-                        <g:message code="account.to.label" />
-                    </label>
-                    <div class="input">
-                        <g:select from="${accounts}" name="account" optionValue="name" optionKey="id" />
-                    </div>
-                </div>
-                <div class="clearfix">
-                    <label>
-                        <g:message code="transfer.amount.label" />
-                    </label>
-                    <div class="input">
-                        <input type="number" name="amount">
-                    </div>
-                </div>
+
+                <tmpl:/tmpls/field bean="${account}" field="from" messageCode="account.from.label">
+                    <span class="uneditable-input">${account?.name}</span>
+                </tmpl:/tmpls/field>
+
+                <tmpl:/tmpls/field bean="${user}" field="username" messageCode="user.to.label">
+                    <span class="uneditable-input">${user?.username}</span>
+                </tmpl:/tmpls/field>
+
+                <tmpl:/tmpls/field messageCode="account.to.label">
+                    <g:select from="${accounts}" name="account" optionValue="name" optionKey="id" />
+                </tmpl:/tmpls/field>
+
+                <tmpl:/tmpls/field messageCode="bank.amount.label">
+                    <input type="number" name="amount">
+                </tmpl:/tmpls/field>
             </fieldset>
 
             <fieldset>
                 <div class="actions">
-                    <g:submitButton name="doSelectAccount" value="Send" />
+                    <g:submitButton name="doSelectAccount" class="btn primary" value="${message(code: 'bank.send.label')}" />
                 </div>
             </fieldset>
         </g:form>

@@ -2,10 +2,13 @@
 <html>
     <head>
         <meta name="layout" content="main" />
-        <title>Bank</title>
     </head>
     <body>
-        <p>${amount} have been successfully transfered from ${account?.name} to ${account2?.name}</p>
-        <g:link controller="bank">Go back</g:link>
+        <p>
+            <g:message code="bank.success.text" args="[amount, account?.name, account2?.name]" />
+        </p>
+        <g:link controller="bank">
+            <g:message code="bank.back.label" />
+        </g:link>
     </body>
 </html>
