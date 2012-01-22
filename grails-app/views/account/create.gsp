@@ -14,7 +14,7 @@
                     <g:message code="default.create.label" args="[entityName]" />
                 </legend>
                 <tmpl:/templates/field bean="${accountInstance}" field="name" type="text" message="Name" />
-                <tmpl:/templates/field bean="${accountInstance}" field="balance" type="number" message="Name" />
+                <tmpl:/templates/field bean="${accountInstance}" field="balance" type="number" message="Balance" />
             </fieldset>
 
             <fieldset>

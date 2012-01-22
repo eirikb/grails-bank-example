@@ -16,7 +16,7 @@
                         <g:message code="user.username.label" default="Username" />
                     </label>
                     <div class="input">
-                        <input type="text" class="xlarge" name="j_username">
+                        <input type="text" class="xlarge" name="j_username" autofocus>
                     </div>
                 </div>
                 <div class="clearfix">
